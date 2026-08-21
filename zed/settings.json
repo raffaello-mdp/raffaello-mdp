@@ -1,0 +1,122 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "right",
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "model": "default"
+      },
+      "type": "registry",
+    },
+  },
+  "show_signature_help_after_edits": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml",
+      "**/values*.yaml",
+    ],
+    "Diff": ["dif"],
+    "OpenTofu": ["tf"],
+    "OpenTofu Vars": ["tfvars"],
+  },
+  "languages": {
+    "YAML": {
+      "formatter": "language_server",
+    },
+    "Go": {
+      "tab_size": 2,
+    },
+    "Shell Script": {
+      "tab_size": 2,
+      "hard_tabs": false,
+    },
+    "Markdown": {
+      "format_on_save": "on",
+      "extend_list_on_newline": false,
+    },
+    "Terraform": {
+      "formatter": {
+        "external": {
+          "command": "tofu",
+          "arguments": ["fmt", "-"],
+        },
+      },
+    },
+    "HCL": {
+      "formatter": {
+        "external": {
+          "command": "tofu",
+          "arguments": ["fmt", "-"],
+        },
+      },
+    },
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "keyOrdering": true,
+          "format": {
+            "singleQuote": true,
+          },
+          "schemaStore": {
+            "enable": false,
+          },
+          "schemas": {
+            "https://getcomposer.org/schema.json": ["/*"],
+            "./schemas/kubernetes.yaml": "k8s/**/*.yaml",
+            "~/global-schemas/docker-compose.yaml": "docker-compose*.yml",
+          },
+        },
+      },
+    },
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+      },
+    },
+  },
+}
